@@ -47,7 +47,7 @@ public class Aplic {
         for (int i = 0; i < n; i++) {
             if (Math.abs(((precoVenda[i] * 100 / precoCompra[i]) - 100)) < 10) {
                 qtdeMenor10++;
-            } else if (Math.abs(((precoVenda[i] * 100 / precoCompra[i]) - 100)) < 20) {
+            } else if (Math.abs(((precoVenda[i] * 100 / precoCompra[i]) - 100)) <= 20) {
                 qtdeMenor20++;
             } else {
                 qtdeMaior20++;
