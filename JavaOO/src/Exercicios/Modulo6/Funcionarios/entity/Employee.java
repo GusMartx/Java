@@ -16,7 +16,6 @@ public class Employee {
         public double grossSalary;
         public double tax;
         
-        
         public double netSalary() {
             return grossSalary - tax;
         }
