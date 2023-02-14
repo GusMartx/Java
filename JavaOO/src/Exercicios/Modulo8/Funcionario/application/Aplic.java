@@ -23,37 +23,53 @@ public class Aplic {
         System.out.print("How many employees will be registered? ");
         int n = input.nextInt();
 
-        List<Employee> employee = new ArrayList<>();
-        Employee objEmp = new Employee();
+        List<Employee> list = new ArrayList<>();
 
         for (int i = 0; i < n; i++) {
 
-            System.out.println("\nEmplyoee #" + (i + 1) + ":");
+            System.out.println("\nEmployee #" + (i + 1) + ":");
             System.out.print("Id: ");
-            Integer id = input.nextInt();
+            int id = input.nextInt();
+            while (hasId(list, id)) {
+                System.out.print("Id already taken! Try another id: ");
+                id = input.nextInt();
+            }
+
             System.out.print("Name: ");
             input.nextLine();
             String name = input.nextLine();
             System.out.print("Salary: ");
-            double salary = input.nextDouble();
+            Double salary = input.nextDouble();
 
-            objEmp = new Employee(id, name, salary);
+            Employee objEmp = new Employee(id, name, salary);
 
-            employee.add(objEmp);
+            list.add(objEmp);
 
         }
 
         System.out.print("\nEnter the employee id that will have salary increase: ");
         int id = input.nextInt();
 
+        /*
+        Employee emp = list.stream(x -> x.getId() == id).findFirst().orElse(null);
+        
+        if (emp == null) {
+            System.out.println("This id does not exist!");
+        } else {
+            System.out.print("Enter the percentage: ");
+            double percentage = input.nextDouble();
+
+            emp.increaseSalary(percentage);
+        }
+        */
+        
         boolean verify = false;
         for (int i = 0; i < n; i++) {
-            if (employee.get(i).getId() == id) {
-
+            if (list.get(i).getId() == id) {
                 System.out.print("Enter the percentage: ");
                 double percentage = input.nextDouble();
 
-                employee.get(i).increaseSalary(percentage);
+                list.get(i).increaseSalary(percentage);
 
                 verify = true;
             }
@@ -63,13 +79,16 @@ public class Aplic {
             System.out.println("This id does not exist!");
         }
 
-        System.out.println("\nList of employees:");
+        System.out.println();
 
-        for (int i = 0; i < n; i++) {
-            System.out.println(employee.get(i).getId() + ", " + employee.get(i).getName() + ", " + employee.get(i).getSalary());
+        for (Employee emp : list) {
+            System.out.println(emp);
         }
 
-        input.close();
     }
 
+    public static boolean hasId(List<Employee> list, int id) {
+        Employee emp = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
+        return emp != null;
+    }
 }
