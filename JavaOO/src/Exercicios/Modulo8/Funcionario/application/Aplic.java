@@ -15,18 +15,18 @@ import java.util.Scanner;
  * @author Gustavo
  */
 public class Aplic {
-    
+
     public static void main(String[] args) {
-        
+
         Scanner input = new Scanner(System.in);
-        
+
         System.out.print("How many employees will be registered? ");
         int n = input.nextInt();
-        
+
         List<Employee> list = new ArrayList<>();
-        
+
         for (int i = 0; i < n; i++) {
-            
+
             System.out.println("\nEmployee #" + (i + 1) + ":");
             System.out.print("Id: ");
             int id = input.nextInt();
@@ -34,41 +34,41 @@ public class Aplic {
                 System.out.print("Id already taken! Try another id: ");
                 id = input.nextInt();
             }
-            
+
             System.out.print("Name: ");
             input.nextLine();
             String name = input.nextLine();
             System.out.print("Salary: ");
             Double salary = input.nextDouble();
-            
+
             Employee objEmp = new Employee(id, name, salary);
-            
+
             list.add(objEmp);
-            
+
         }
-        
+
         System.out.print("\nEnter the employee id that will have salary increase: ");
         int id = input.nextInt();
-        
+
         Employee emp = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
-        
+
         if (emp == null) {
             System.out.println("This id does not exist!");
         } else {
             System.out.print("Enter the percentage: ");
             double percentage = input.nextDouble();
-            
+
             emp.increaseSalary(percentage);
         }
-        
+
         System.out.println();
-        
+
         for (Employee e : list) {
             System.out.println(e);
         }
-        
+
     }
-    
+
     public static boolean hasId(List<Employee> list, int id) {
         Employee emp = list.stream().filter(x -> x.getId() == id).findFirst().orElse(null);
         return emp != null;
