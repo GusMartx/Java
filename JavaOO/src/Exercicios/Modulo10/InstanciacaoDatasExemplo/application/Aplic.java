@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Exercicios.Modulo10.DatasExemplo.application;
+package Exercicios.Modulo10.InstanciacaoDatasExemplo.application;
 
 import java.time.Instant;
 import java.time.LocalDate;
