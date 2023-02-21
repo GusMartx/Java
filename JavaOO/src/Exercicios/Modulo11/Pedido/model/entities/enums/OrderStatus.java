@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Exercicios.Modulo11.Pedido.entities.enums;
+package Exercicios.Modulo11.Pedido.model.entities.enums;
 
 /**
  *

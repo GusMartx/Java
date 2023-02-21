@@ -3,9 +3,9 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Exercicios.Modulo11.Pedido.entities;
+package Exercicios.Modulo11.Pedido.model.entities;
 
-import Exercicios.Modulo11.Pedido.entities.enums.OrderStatus;
+import Exercicios.Modulo11.Pedido.model.entities.enums.OrderStatus;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;

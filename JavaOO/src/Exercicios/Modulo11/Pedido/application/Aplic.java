@@ -5,11 +5,11 @@
  */
 package Exercicios.Modulo11.Pedido.application;
 
-import Exercicios.Modulo11.Pedido.entities.Client;
-import Exercicios.Modulo11.Pedido.entities.Order;
-import Exercicios.Modulo11.Pedido.entities.OrderItem;
-import Exercicios.Modulo11.Pedido.entities.Product;
-import Exercicios.Modulo11.Pedido.entities.enums.OrderStatus;
+import Exercicios.Modulo11.Pedido.model.entities.Client;
+import Exercicios.Modulo11.Pedido.model.entities.Order;
+import Exercicios.Modulo11.Pedido.model.entities.OrderItem;
+import Exercicios.Modulo11.Pedido.model.entities.Product;
+import Exercicios.Modulo11.Pedido.model.entities.enums.OrderStatus;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
