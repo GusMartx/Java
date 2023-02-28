@@ -36,9 +36,9 @@ public class Aplic {
         CarRental cr = new CarRental(start, finish, new Vehicle(carModel));
         
         System.out.print("Enter price per hour: ");
-        double pricePerHour = input.nextDouble();
+        Double pricePerHour = input.nextDouble();
         System.out.print("Enter price per day: ");
-        double pricePerDay = input.nextDouble();
+        Double pricePerDay = input.nextDouble();
         
         RentalService rentalService = new RentalService(pricePerHour, pricePerDay, new BrazilTaxService());
         
